@@ -1,0 +1,9 @@
+{
+  "name": "s",
+  "version": "1.0.0",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@rails/ujs": "^7.0.2-2",
+    "bootstrap": "^5.1.3"
+  }
+}

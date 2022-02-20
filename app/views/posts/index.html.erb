@@ -1,0 +1,22 @@
+<% provide :page_title, 'Posts'%>
+
+<h1>Posts</h1>
+<%= link_to "New Post", new_post_path %>
+<% @posts.each do |post|%>
+  <h2><%= post.title %></h2>
+
+  <time datatime="<%= post.created_at %>">
+    <%= post.created_at %>
+  </time>
+
+  <p>
+    <%= truncate strip_tags(post.body), lenght: 50, omission: '...(continued)'  %>
+    <br>
+    <%= link_to 'Show', post_path(post) %> |
+    <%= link_to 'Edit', edit_post_path(post) %> |
+    <%= button_to 'Destroy', post_path(post), method: :delete %>
+  </p>
+<% end %>
+
+
+
