@@ -19,7 +19,17 @@
       </ul>
     </nav>
     <main>
-    <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <% if current_user %>
+        <%= button_to 'Log out', destroy_user_session_path, method: :delete  %>
+        <%= link_to 'Account Settings', edit_user_registration_path %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path%>
+        <%= link_to'Sign up', new_user_registration_path%>
+      <% end %>
+      <hr>
+      <%= yield %>
     </main>
   </body>
 </html>
