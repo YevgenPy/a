@@ -1,5 +1,6 @@
 <% provide :page_title, 'Show posts'%>
 
+<h2><%= current_user.email %></h2>
 
 <h1 class="mb-4"><%= @post.title %></h1>
 
@@ -39,5 +40,6 @@
     <%= comment.body %>
   </p>
   <%= button_to 'Delete comment', post_comment_path(@post, comment), method: :delete %>
+    </p>
 
 <% end %>

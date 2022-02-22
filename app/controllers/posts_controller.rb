@@ -26,6 +26,7 @@ class PostsController < ApplicationController
   end
 
   def update
+    authorize @post
     if @post.update post_params
       redirect_to posts_path
     else

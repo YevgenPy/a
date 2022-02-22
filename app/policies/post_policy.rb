@@ -7,7 +7,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    user.admin? || !post.published?
+    @user.id == @post.user.id
   end
 
   def destroy?
