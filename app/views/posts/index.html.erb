@@ -1,5 +1,5 @@
 <% provide :page_title, 'Posts'%>
-
+<h2><%= current_user.email %></h2>
 <h1>Posts</h1>
 <%= link_to "New Post", new_post_path %>
 <% @posts.each do |post|%>
