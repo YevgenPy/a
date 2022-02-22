@@ -23,6 +23,10 @@
   <p>
   </p>
   <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
@@ -31,15 +35,15 @@
   </p>
 <% end %>
 
-<% @comments.each do |comment| %>
-  <time datetime="<%= comment.formatted_created_at %>">
-    <%= comment.formatted_created_at %>
-  </time>
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
 
   <p>
     <%= comment.body %>
   </p>
-  <%= button_to 'Delete comment', post_comment_path(@post, comment), method: :delete %>
-    </p>
+
 
 <% end %>
