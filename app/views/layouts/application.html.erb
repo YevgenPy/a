@@ -17,13 +17,13 @@
       <span class="fs-4">My blog</span>
     </a>
 
+
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
       <span class="btn btn-light"><%= link_to 'Home page', root_path %></span>
       <span class="btn btn-light"><%= link_to 'Posts pages', posts_path %> </span>
       <span class="btn btn-warning"><%= link_to "New Post", new_post_path %> </span>
     </nav>
   </div>
-
 
   <body>
     <main>
@@ -40,8 +40,10 @@
 
       <div class="container">
       <%= yield %>
+
       </div>
 
     </main>
   </body>
+
 </html>
