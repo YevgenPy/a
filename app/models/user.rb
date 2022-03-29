@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   attr_writer :login
-  validate :validate_username
+  validates :username, presence: true
 
   def login
     @login || self.username || self.email
@@ -20,12 +20,6 @@ class User < ApplicationRecord
       where(conditions.to_h).where(["lower(username) = :value OR lower(email)= :value", {:value => login.downcase}]).first
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       where(conditions.to_h).first
-    end
-  end
-
-  def validate_username
-    if User.where(email: username).exists?
-      errors.add(:username, :invalid)
     end
   end
 end
