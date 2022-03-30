@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   attr_writer :login
-  validates :username, presence: true
-
+  validates :username, uniqueness: true
+  
   def login
     @login || self.username || self.email
   end
