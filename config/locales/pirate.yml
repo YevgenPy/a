@@ -1,4 +1,0 @@
-pirate:
-  time:
-    formats:
-      long: "%Y%m%dT%H%M%S%z"
