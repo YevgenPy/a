@@ -2,7 +2,7 @@
 <html>
   <head>
     <title><%= full_title(yield(:page_title)) %></title>
-    <span class="btn btn-info"><%= current_user.email rescue  "Guest"%> </span>
+    <span class="btn btn-info"><%= current_user.username rescue  "Guest"%> </span>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>

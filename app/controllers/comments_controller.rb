@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = @post.comments.build comment_params
+    @comment.user = current_user
 
     if @comment.save
       flash[:success] = "Comment created"

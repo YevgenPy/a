@@ -4,6 +4,9 @@
 
 <h1 class="mb-4"><%= @post.title %></h1>
 
+<section class="card-header">
+  <%= @post.user.username %>
+</section>
 
 <time datetime="<%= @post.formatted_created_at %>">
     <%= @post.formatted_created_at %>
@@ -19,12 +22,6 @@
 <h2>Add a comment:</h2>
 <%= form_with model: [ @post, @comment ] do |form| %>
   <p>
-  </p>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
   </p>
@@ -34,8 +31,10 @@
 <% end %>
 
 <h2>All comments</h2>
-<% @post.comments.each do |comment| %>
-  <div class="alert alert-light">
-    <p><strong><%= comment.commenter %></strong>: <%=comment.body%> </p>
-  </div>
+<% if current_user %>
+  <% @post.comments.each do |comment| %>
+    <div class="alert alert-light">
+      <p><strong><%= comment.user.username if comment.user %></strong>: <%=comment.body%> </p>
+    </div>
+  <% end %>
 <% end %>
