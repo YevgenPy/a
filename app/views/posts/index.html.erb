@@ -14,7 +14,7 @@
     <h2><%= post.title %></h2>
 
     <section class="card-text">
-      <p><%= post.created_at %></p>
+      <p><%= l post.created_at, format: :long%></p>
 
       <p class="my-2">
         <%= truncate strip_tags(post.body), lenght: 50, omission: '...(continued)'  %>

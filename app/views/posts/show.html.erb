@@ -8,9 +8,9 @@
   <%= @post.user.username %>
 </section>
 
-<time datetime="<%= @post.formatted_created_at %>">
-    <%= @post.formatted_created_at %>
-</time>
+<p <%= l @post.created_at, format: :long %>">
+<%= l @post.created_at, format: :long %>
+</p>
 
 <p class="lead my-3">
   <%= @post.body %>
@@ -34,6 +34,9 @@
 <% if current_user %>
   <% @post.comments.each do |comment| %>
     <div class="alert alert-light">
+      <p>
+        <%= l comment.created_at, format: :long if comment.created_at %>
+      </p>
       <p><strong><%= comment.user.username if comment.user %></strong>: <%=comment.body%> </p>
     </div>
   <% end %>
