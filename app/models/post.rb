@@ -12,7 +12,7 @@ class Post < ApplicationRecord
   scope :search_import, -> { includes(:user, :comments) }
 
   def search_data
-    super().merge!(author: user.username, comments: comments.map(&:value).join(' '))
+    super().merge!(author: user.username, comments: comments.map { |comment| comment.body }.join(' '))
   end
 end
 
