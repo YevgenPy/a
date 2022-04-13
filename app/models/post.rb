@@ -15,4 +15,3 @@ class Post < ApplicationRecord
     super().merge!(author: user.username, comments: comments.map { |comment| comment.body }.join(' '))
   end
 end
-
