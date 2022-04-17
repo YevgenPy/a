@@ -1,18 +1,18 @@
 <% provide :page_title, 'Show posts'%>
 
-<h2><%=  %></h2>
-
-<h1 class="mb-4"><%= @post.title %></h1>
-
 <section class="card-header">
-  <%= @post.user.username %>
+  <h2><%= @post.user.username %></h2>
+  <h7><%= l @post.created_at, format: :long %></h7>
 </section>
 
-<p <%= l @post.created_at, format: :long %>">
-<%= l @post.created_at, format: :long %>
-</p>
+<h1 class="display-4"><%= @post.title %></h1>
 
-<p class="lead my-3">
+<p>
+  <% if @post.avatar.attached? %>
+    <%= image_tag @post.avatar, width: "500px"%>
+    <%end %>
+</p>
+<p class="lead my-xxl-1">
   <%= @post.body %>
 </p>
 

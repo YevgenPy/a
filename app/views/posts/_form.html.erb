@@ -5,6 +5,12 @@
   </div>
 
   <div>
+
+  </div>
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+
+  <div>
     <%= f.label :body %>
     <%= f.text_area :body, required: true, minlength: 5 %>
   </div>
