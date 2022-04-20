@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'pages#index'
 
 
+  get 'search', to: 'search#search'
+
+
   resources :posts do
     resources :comments
   end

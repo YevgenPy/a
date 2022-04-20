@@ -1,8 +1,11 @@
+
 <%= form_with model: @post do |f| %>
   <div>
     <%= f.label :title %>
     <%= f.text_field :title, required: true, minlength: 5, placeholder: 'Title' %>
   </div>
+
+  <%= f.check_box :mail_if_comment %>
 
   <div>
 
@@ -17,3 +20,4 @@
 
   <%= f.submit({:class=>'btn btn-success'})%>
 <% end %>
+
