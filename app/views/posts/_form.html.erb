@@ -4,6 +4,8 @@
     <%= f.text_field :title, required: true, minlength: 5, placeholder: 'Title' %>
   </div>
 
+  <%= f.check_box :mail_if_comment %>
+
   <div>
     <%= f.label :body %>
     <%= f.text_area :body, required: true, minlength: 5 %>
