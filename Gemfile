@@ -29,6 +29,9 @@ gem "jbuilder"
 gem 'faker'
 gem 'bootstrap', '~> 5.1.3'
 gem 'pundit'
+gem "letter_opener", group: :development
+gem 'whenever', require: false
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 gem 'rack'
