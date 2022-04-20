@@ -8,19 +8,22 @@
 <% @posts.each do |post|%>
 <article class="card my-3">
   <section class="card-header">
-    <%= post.user.username %>
+    <h2><%= post.user.username %></h2>
+    <p><%= l post.created_at, format: :long %></p>
   </section>
 
   <div class="card-body">
-    <h2><%= post.title %></h2>
+    <h1><%= post.title %></h1>
+    <td><%= image_tag post.avatar, width: "200px" if post.avatar.attached?%></td>
 
     <section class="card-text">
+
       <p><%= l post.created_at, format: :long%></p>
       <span class="comment"><%= pluralize(post.comments.size, 'comment') %></span>
 
       <p class="my-2">
         <%= truncate strip_tags(post.body), lenght: 50, omission: '...(continued)'  %>
-      </p>
+      <p><%= l post.created_at, format: :long%></p>
     </section>
 
     <section>
