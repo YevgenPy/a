@@ -18,12 +18,18 @@
     </a>
 
 
+
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
       <span class="btn btn-light"><%= link_to 'Home page', root_path %></span>
       <span class="btn btn-light"><%= link_to 'Posts pages', posts_path %> </span>
       <span class="btn btn-warning"><%= link_to "New Post", new_post_path %> </span>
     </nav>
   </div>
+
+<body>
+<%= render 'search/form' %>
+</body>
+
 
   <body>
     <main>
@@ -36,6 +42,7 @@
         <%= link_to "Sign in", new_user_session_path%>
         <%= link_to'Sign up', new_user_registration_path%>
       <% end %>
+
       <hr>
       <div class="container">
       <%= yield %>
