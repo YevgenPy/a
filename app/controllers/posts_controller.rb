@@ -2,8 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post!, only: %i[show destroy edit update]
 
   def show
-    @comment = @post.comments.build
-    @comments = Comment.order created_at: :desc
+    @comment = Comment.new(post_id: @post.id, user_id: current_user.id)
   end
 
   def destroy

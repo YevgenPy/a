@@ -37,7 +37,7 @@
       <p>
         <%= l comment.created_at, format: :long if comment.created_at %>
       </p>
-      <p><strong><%= comment.user.username if comment.user %></strong>: <%=comment.body%> </p>
+      <p><strong><%= comment.user.username %></strong>: <%=comment.body%> </p>
     </div>
   <% end %>
 <% end %>
