@@ -36,10 +36,14 @@ class PostsController < ApplicationController
 
   def update
     authorize @post
-    if @post.update post_params
-      redirect_to posts_path
-    else
-      render :edit
+    respond_to do |format|
+      if @post.update post_params
+        format.html { redirect_to posts_path, notice: 'Item was successfully updated.' }
+        format.json { render :show, status: :ok, location: @post }
+      else
+        format.html { render :edit }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
     end
   end
 
