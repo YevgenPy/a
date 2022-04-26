@@ -8,10 +8,10 @@
   <%= f.check_box :mail_if_comment %>
 
   <div>
-
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
   </div>
-  <%= f.label :avatar %>
-  <%= f.file_field :avatar %>
+
 
   <div>
     <%= f.label :body %>
@@ -20,4 +20,3 @@
 
   <%= f.submit({:class=>'btn btn-success'})%>
 <% end %>
-

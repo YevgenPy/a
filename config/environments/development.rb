@@ -17,6 +17,9 @@ Rails.application.configure do
   config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
 
+  config.debug_exception_response_format = :default
+  config.debug_exception_response_format = :api
+
   # Enable server timing
   config.server_timing = true
 
